@@ -6,9 +6,10 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "feature", glue = {
-		"br.com.rsinet.HUB_BDD.stepDefinition" }, tags = {
-				"@cadastroComSucesso, @cadastroComFalha" }, monochrome = false)
+@CucumberOptions(features = "feature", 
+	glue = {	"br.com.rsinet.HUB_BDD.stepDefinition" }, 
+	tags = {"@cadastroComSucesso, @cadastroComFalha" },
+	monochrome = true)
 public class TesteCadastroUsuario {
 
 }

@@ -18,7 +18,7 @@ public class HomePage {
 	@FindBy(how = How.ID, using = "menuUser")
 	private static WebElement btnLogar;
 
-	@FindBy(how = How.ID, using = "menuUserLink")
+	@FindBy(how = How.XPATH, using = "//*[@id=\"menuUserLink\"]/span")
 	private static WebElement UserLog;
 
 	@FindBy(how = How.ID, using = "speakersImg")
@@ -42,21 +42,19 @@ public class HomePage {
 		componentSpeakers.click();
 	}
 
-	public String capturarQuemTaLogado() {
+	public String getUserLog() {
+		wait.until(ExpectedConditions.urlToBe("https://www.advantageonlineshopping.com/#/"));
 		if (UserLog.isEnabled()) {
-			wait.until(ExpectedConditions.urlToBe("https://www.advantageonlineshopping.com/#/"));
+			wait.until(ExpectedConditions.visibilityOf(UserLog));
 			return UserLog.getText();
 		}
-		return "N„o est· ativo";
+		return "N√£o est√° ativo";
 	}
 
 	public WebElement getBtnLogar() {
 		return btnLogar;
 	}
 
-	public WebElement getUserLog() {
-		return UserLog;
-	}
 
 	public WebElement getComponentSpeakers() {
 		return componentSpeakers;
@@ -64,10 +62,6 @@ public class HomePage {
 
 	public WebElement getBtnCriarConta() {
 		return btnCriarConta;
-	}
-	
-	public void esperar() {
-		wait.until(ExpectedConditions.urlToBe("https://www.advantageonlineshopping.com/#/"));
 	}
 
 }

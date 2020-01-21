@@ -2,24 +2,21 @@
 #coding:utf-8
 Funcionalidade: Cadastro de usuario
 
-  @cadastroComSucesso
-  Cenario: Cadastro com sucesso
+  Contexto: 
     Dado que estou na tela home
     Quando clico no botao logar
     E clico em Criar uma nova conta
+
+  @cadastroComSucesso
+  Cenario: Cadastro com sucesso
     E informo os dados para cadastro
       | Username | email                       | senha   | senhaConfirm | primeiroNome | ultimoNome | telefone     | Pais   | Cidade          | Endereco       | Estado    | CEP       |
-      | BRUN312  | felipe.almeidaa14@gmail.com | Felipe2 | Felipe2      | Felipe       | Silva      | (11)94444223 | Brazil | Tabo„o da Serra | Rua Bueno, 188 | S„o Paulo | 06784-200 |
-    Entao sou redirecionado para a tela home
-    E o meu usuario aparece conectado como "BRUN312"
+      | BRUN328  | felipe.almeidaa14@gmail.com | Felipe2 | Felipe2      | Felipe       | Silva      | (11)94444223 | Brazil | Tabo√£o da Serra | Rua Bueno, 188 | S√£o Paulo | 06784-200 |
+    Entao o meu usuario aparece conectado como "BRUN328"
 
   @cadastroComFalha
   Cenario: Cadastro com falha
-    Dado que estou na tela home
-    Quando clico no botao logar
-    E clico em Criar uma nova conta
     E informo os dados para cadastro
       | Username | email                       | senha    | senhaConfirm | primeiroNome | ultimoNome | telefone     | Pais   | Cidade          | Endereco       | Estado    | CEP       |
-      | BRUN303  | felipe.almeidaa14@gmail.com | Felipe32 | Felipe2      | Felipe       | Silva      | (11)94444223 | Brazil | Tabo„o da Serra | Rua Bueno, 188 | S„o Paulo | 06784-200 |
-    Entao as senhas devem ser incompativeis 
-    E devo permanecer na tela de registro
+      | BRUN303  | felipe.almeidaa14@gmail.com | Felipe32 | Felipe2      | Felipe       | Silva      | (11)94444223 | Brazil | Tabo√£o da Serra | Rua Bueno, 188 | S√£o Paulo | 06784-200 |
+    Entao  devo permanecer na tela de registro

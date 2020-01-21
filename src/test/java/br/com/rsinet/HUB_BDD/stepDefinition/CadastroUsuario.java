@@ -1,7 +1,6 @@
 package br.com.rsinet.HUB_BDD.stepDefinition;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.util.Map;
 
@@ -12,6 +11,7 @@ import br.com.rsinet.HUB_BDD.pageFactory.HomePage;
 import br.com.rsinet.HUB_BDD.pageFactory.RegisterPage;
 import br.com.rsinet.HUB_BDD.util.DriverFactory;
 import cucumber.api.DataTable;
+import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
@@ -20,7 +20,7 @@ public class CadastroUsuario {
 	private WebDriver driver;
 	private HomePage homePage;
 	private RegisterPage registerPage;
-
+	
 	@Dado("^que estou na tela home$")
 	public void que_estou_na_tela_home() throws Throwable {
 		driver = DriverFactory.initDriver();
@@ -66,25 +66,13 @@ public class CadastroUsuario {
 
 		}
 	}
-
-	
-	@Entao("^sou redirecionado para a tela home$")
-	public void sou_redirecionado_para_a_tela_home() throws Throwable {
-		homePage.esperar();
-		assertEquals("https://www.advantageonlineshopping.com/#/", driver.getCurrentUrl());
-		System.out.println("Cadastro feito");
-	}
 	
 	
 	@Entao("^o meu usuario aparece conectado como \"([^\"]*)\"$")
 	public void o_meu_usuario_aparece_conectado_como(String userName) throws Throwable {
-		assertTrue(driver.getPageSource().contains(userName));
-	}
-
-	
-	@Entao("^as senhas devem ser incompativeis$")
-	public void as_senhas_devem_ser_incompativeis() throws Throwable {
-		assertTrue(registerPage.getPassword() != registerPage.getPasswordConfirm());
+		String usuarioLogado = homePage.getUserLog();
+		assertEquals("https://www.advantageonlineshopping.com/#/", driver.getCurrentUrl());
+		assertEquals(userName, usuarioLogado);
 	}
 
 	
@@ -92,5 +80,11 @@ public class CadastroUsuario {
 	public void devo_permanecer_na_tela_de_registro() throws Throwable {
 		assertEquals("https://www.advantageonlineshopping.com/#/register", driver.getCurrentUrl());
 	}
+	
+	@After
+	public void finalizaDriverACadaCenario() {
+		DriverFactory.closeDriver();
+	}
+
 
 }
