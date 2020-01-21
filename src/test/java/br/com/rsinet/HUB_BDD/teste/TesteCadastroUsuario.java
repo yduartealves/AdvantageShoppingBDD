@@ -7,9 +7,11 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "feature", 
-	glue = {	"br.com.rsinet.HUB_BDD.stepDefinition" }, 
+	glue = {"br.com.rsinet.HUB_BDD.stepDefinition" }, 
 	tags = {"@cadastroComSucesso, @cadastroComFalha" },
-	monochrome = true)
+	monochrome = true,
+	plugin = {"pretty", "html:relatorios"}
+)
 public class TesteCadastroUsuario {
 
 }

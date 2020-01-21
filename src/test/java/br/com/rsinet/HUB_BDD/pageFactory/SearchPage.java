@@ -19,21 +19,26 @@ public class SearchPage {
 	private WebDriverWait wait = new WebDriverWait(DriverFactory.getdriver(), 10);
 	
 	@FindBy(how = How.ID, using = "menuSearch")
-	public static WebElement lupaPesquisa;
+	private  WebElement lupaPesquisa;
 
 	@FindBy(how = How.ID, using = "autoComplete")
-	public static WebElement barraPesquisa;
+	private  WebElement barraPesquisa;
 
 	@FindBy(how = How.XPATH, using = "//*[@id=\"searchPage\"]/div[3]/div/label/span")
-	public static WebElement componentText;
+	private  WebElement componentText;
 
-	public static WebElement linkText(WebDriver driver, String linkText) throws Exception {
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/footer/div/h3")
+	private WebElement followUS;
+	
+	public  WebElement linkText(WebDriver driver, String linkText) throws Exception {
 		return driver.findElement(By.linkText(linkText));
 	}
 	public void clicarMassaDados(WebDriver driver, String linkText) throws Exception {
 		wait.until(ExpectedConditions.visibilityOf(linkText(driver, linkText)));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", linkText(driver, linkText));
+		wait.until(ExpectedConditions.urlContains("/product/"));
+		wait.until(ExpectedConditions.visibilityOf(followUS));
 	}
 	public String getComponentText() {
 		return componentText.getText();
