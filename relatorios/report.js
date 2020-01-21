@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("CadastroUsuario.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("buscarPelaHome.feature");
 formatter.feature({
   "comments": [
     {
@@ -7,13 +7,13 @@ formatter.feature({
     },
     {
       "line": 2,
-      "value": "#coding:utf-8"
+      "value": "#encoding: utf-8"
     }
   ],
   "line": 3,
-  "name": "Cadastro de usuario",
+  "name": "Busca pela home",
   "description": "",
-  "id": "cadastro-de-usuario",
+  "id": "busca-pela-home",
   "keyword": "Funcionalidade"
 });
 formatter.background({
@@ -25,123 +25,97 @@ formatter.background({
 });
 formatter.step({
   "line": 6,
-  "name": "que estou na tela home",
+  "name": "que eu esteja na tela principal",
   "keyword": "Dado "
 });
 formatter.step({
   "line": 7,
-  "name": "clico no botao logar",
+  "name": "clico em speakers",
   "keyword": "Quando "
 });
-formatter.step({
-  "line": 8,
-  "name": "clico em Criar uma nova conta",
-  "keyword": "E "
-});
 formatter.match({
-  "location": "CadastroUsuario.que_estou_na_tela_home()"
+  "location": "PesquisaPelaHome.que_eu_esteja_na_tela_principal()"
 });
 formatter.result({
-  "duration": 14761543700,
+  "duration": 16714197700,
   "status": "passed"
 });
 formatter.match({
-  "location": "CadastroUsuario.clico_no_botao_logar()"
+  "location": "PesquisaPelaHome.clico_em_speakers()"
 });
 formatter.result({
-  "duration": 1296994300,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroUsuario.clico_em_Criar_uma_nova_conta()"
-});
-formatter.result({
-  "duration": 624648700,
+  "duration": 6670945200,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 11,
-  "name": "Cadastro com sucesso",
+  "line": 10,
+  "name": "Busca com sucesso pela home",
   "description": "",
-  "id": "cadastro-de-usuario;cadastro-com-sucesso",
+  "id": "busca-pela-home;busca-com-sucesso-pela-home",
   "type": "scenario",
   "keyword": "Cenario",
   "tags": [
     {
-      "line": 10,
-      "name": "@cadastroComSucesso"
+      "line": 9,
+      "name": "@BuscaHomeSucesso"
     }
   ]
 });
 formatter.step({
-  "line": 12,
-  "name": "informo os dados para cadastro",
+  "line": 11,
+  "name": "clico no produto",
   "rows": [
     {
       "cells": [
-        "Username",
-        "email",
-        "senha",
-        "senhaConfirm",
-        "primeiroNome",
-        "ultimoNome",
-        "telefone",
-        "Pais",
-        "Cidade",
-        "Endereco",
-        "Estado",
-        "CEP"
+        "produto"
       ],
-      "line": 13
+      "line": 12
     },
     {
       "cells": [
-        "BRUN328",
-        "felipe.almeidaa14@gmail.com",
-        "Felipe2",
-        "Felipe2",
-        "Felipe",
-        "Silva",
-        "(11)94444223",
-        "Brazil",
-        "Taboão da Serra",
-        "Rua Bueno, 188",
-        "São Paulo",
-        "06784-200"
+        "Bose Soundlink Bluetooth Speaker III"
       ],
-      "line": 14
+      "line": 13
     }
   ],
   "keyword": "E "
 });
 formatter.step({
-  "line": 15,
-  "name": "o meu usuario aparece conectado como \"BRUN328\"",
+  "line": 14,
+  "name": "estou na tela do produto",
+  "rows": [
+    {
+      "cells": [
+        "produto"
+      ],
+      "line": 15
+    },
+    {
+      "cells": [
+        "Bose Soundlink Bluetooth Speaker III"
+      ],
+      "line": 16
+    }
+  ],
   "keyword": "Entao "
 });
 formatter.match({
-  "location": "CadastroUsuario.informo_os_dados_para_cadastro(DataTable)"
+  "location": "PesquisaPelaBarra.clico_no_produto(DataTable)"
 });
 formatter.result({
-  "duration": 5336618400,
+  "duration": 4973300,
   "status": "passed"
 });
 formatter.match({
-  "arguments": [
-    {
-      "val": "BRUN328",
-      "offset": 38
-    }
-  ],
-  "location": "CadastroUsuario.o_meu_usuario_aparece_conectado_como(String)"
+  "location": "PesquisaPelaHome.estou_na_tela_do_produto(DataTable)"
 });
 formatter.result({
-  "duration": 10348132000,
-  "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be \"https://www.advantageonlineshopping.com/#/\". Current url: \"https://www.advantageonlineshopping.com/#/register\" (tried for 10 second(s) with 500 milliseconds interval)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027RSI1515\u0027, ip: \u002710.1.0.57\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_171\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\\Users\\FELIPE~1.ALM\\AppDa...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:51299}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.117, webStorageEnabled: true}\nSession ID: d652e034c5a40a9019ae4471c2657849\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)\r\n\tat br.com.rsinet.HUB_BDD.pageFactory.HomePage.getUserLog(HomePage.java:46)\r\n\tat br.com.rsinet.HUB_BDD.stepDefinition.CadastroUsuario.o_meu_usuario_aparece_conectado_como(CadastroUsuario.java:73)\r\n\tat ✽.Entao o meu usuario aparece conectado como \"BRUN328\"(CadastroUsuario.feature:15)\r\n",
+  "duration": 34149600,
+  "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat br.com.rsinet.HUB_BDD.stepDefinition.PesquisaPelaHome.estou_na_tela_do_produto(PesquisaPelaHome.java:36)\r\n\tat ✽.Entao estou na tela do produto(buscarPelaHome.feature:14)\r\n",
   "status": "failed"
 });
 formatter.after({
-  "duration": 742007600,
+  "duration": 661348300,
   "status": "passed"
 });
 formatter.background({
@@ -153,116 +127,82 @@ formatter.background({
 });
 formatter.step({
   "line": 6,
-  "name": "que estou na tela home",
+  "name": "que eu esteja na tela principal",
   "keyword": "Dado "
 });
 formatter.step({
   "line": 7,
-  "name": "clico no botao logar",
+  "name": "clico em speakers",
   "keyword": "Quando "
 });
-formatter.step({
-  "line": 8,
-  "name": "clico em Criar uma nova conta",
-  "keyword": "E "
-});
 formatter.match({
-  "location": "CadastroUsuario.que_estou_na_tela_home()"
+  "location": "PesquisaPelaHome.que_eu_esteja_na_tela_principal()"
 });
 formatter.result({
-  "duration": 10887826000,
+  "duration": 10816731400,
   "status": "passed"
 });
 formatter.match({
-  "location": "CadastroUsuario.clico_no_botao_logar()"
+  "location": "PesquisaPelaHome.clico_em_speakers()"
 });
 formatter.result({
-  "duration": 1519630600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "CadastroUsuario.clico_em_Criar_uma_nova_conta()"
-});
-formatter.result({
-  "duration": 708181200,
+  "duration": 5537883300,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 18,
-  "name": "Cadastro com falha",
+  "line": 19,
+  "name": "Busca com falha pela home",
   "description": "",
-  "id": "cadastro-de-usuario;cadastro-com-falha",
+  "id": "busca-pela-home;busca-com-falha-pela-home",
   "type": "scenario",
   "keyword": "Cenario",
   "tags": [
     {
-      "line": 17,
-      "name": "@cadastroComFalha"
+      "line": 18,
+      "name": "@BuscaHomeFalha"
     }
   ]
 });
 formatter.step({
-  "line": 19,
-  "name": "informo os dados para cadastro",
+  "line": 20,
+  "name": "clico no produto",
   "rows": [
     {
       "cells": [
-        "Username",
-        "email",
-        "senha",
-        "senhaConfirm",
-        "primeiroNome",
-        "ultimoNome",
-        "telefone",
-        "Pais",
-        "Cidade",
-        "Endereco",
-        "Estado",
-        "CEP"
+        "produto"
       ],
-      "line": 20
+      "line": 21
     },
     {
       "cells": [
-        "BRUN303",
-        "felipe.almeidaa14@gmail.com",
-        "Felipe32",
-        "Felipe2",
-        "Felipe",
-        "Silva",
-        "(11)94444223",
-        "Brazil",
-        "Taboão da Serra",
-        "Rua Bueno, 188",
-        "São Paulo",
-        "06784-200"
+        "Bose Soundlink Bluetooth Speaker VI"
       ],
-      "line": 21
+      "line": 22
     }
   ],
   "keyword": "E "
 });
 formatter.step({
-  "line": 22,
-  "name": "devo permanecer na tela de registro",
+  "line": 23,
+  "name": "nao encontrarei produto",
   "keyword": "Entao "
 });
 formatter.match({
-  "location": "CadastroUsuario.informo_os_dados_para_cadastro(DataTable)"
+  "location": "PesquisaPelaBarra.clico_no_produto(DataTable)"
 });
 formatter.result({
-  "duration": 7599670000,
+  "duration": 188400,
   "status": "passed"
 });
 formatter.match({
-  "location": "CadastroUsuario.devo_permanecer_na_tela_de_registro()"
+  "location": "PesquisaPelaHome.nao_encontrarei_produto()"
 });
 formatter.result({
-  "duration": 16341500,
+  "duration": 7611500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1546187400,
+  "duration": 643697800,
   "status": "passed"
 });
 });
