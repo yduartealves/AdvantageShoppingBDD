@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -15,7 +16,13 @@ import br.com.rsinet.HUB_BDD.util.DriverFactory;
 
 
 public class SearchPage {
-	
+	private WebDriver driver;
+
+	public SearchPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(this.driver, this);
+	}
+
 	private WebDriverWait wait = new WebDriverWait(DriverFactory.getdriver(), 10);
 	
 	@FindBy(how = How.ID, using = "menuSearch")

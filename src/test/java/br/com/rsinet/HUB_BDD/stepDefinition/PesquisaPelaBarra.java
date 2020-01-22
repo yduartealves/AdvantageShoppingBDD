@@ -7,8 +7,8 @@ import java.util.Map;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
+import br.com.rsinet.HUB_BDD.manager.PageObjectManager;
 import br.com.rsinet.HUB_BDD.pageFactory.SearchPage;
 import br.com.rsinet.HUB_BDD.util.DriverFactory;
 import cucumber.api.DataTable;
@@ -19,11 +19,14 @@ import cucumber.api.java.pt.Quando;
 public class PesquisaPelaBarra {
 	private WebDriver driver;
 	private SearchPage	searchPage;
+	private PageObjectManager pageObjectManager;
 	
 	@Dado("^em que estou na tela inicial$")
 	public void em_que_estou_na_tela_inicial() throws Throwable {
 	    driver = DriverFactory.initDriver();
-	    searchPage = PageFactory.initElements(driver, SearchPage.class);
+		pageObjectManager = new PageObjectManager(driver);
+		searchPage = pageObjectManager.getSearchPage();
+
 	}
 
 	@Quando("^clico na lupa de pesquisa$")

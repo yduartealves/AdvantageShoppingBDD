@@ -5,14 +5,17 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import br.com.rsinet.HUB_BDD.manager.FileReaderManager;
+
 public class DriverFactory {
 	private static WebDriver driver;
 	
 	public static WebDriver initDriver() {
+		System.setProperty("webdriver.chrome.driver", FileReaderManager.getInstance().getConfigReader().getDriverPath());
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(), TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get(Constantes.URLHOME);
+		driver.get(FileReaderManager.getInstance().getConfigReader().getUrl());
 		
 		return driver;
 	}

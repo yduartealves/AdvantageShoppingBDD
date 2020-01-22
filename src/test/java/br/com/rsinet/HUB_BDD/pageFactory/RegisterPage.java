@@ -1,18 +1,24 @@
 package br.com.rsinet.HUB_BDD.pageFactory;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.com.rsinet.HUB_BDD.util.DriverFactory;
-
 
 public class RegisterPage {
-	
-	private WebDriverWait wait = new WebDriverWait(DriverFactory.getdriver(), 10);
+	private WebDriver driver;
+
+	public RegisterPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	private WebDriverWait wait = new WebDriverWait(driver, 10);
 	private Select select;
 	
 	@FindBy(how = How.NAME, using = "usernameRegisterPage")

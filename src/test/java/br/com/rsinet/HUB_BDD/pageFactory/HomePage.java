@@ -1,20 +1,27 @@
 package br.com.rsinet.HUB_BDD.pageFactory;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.HUB_BDD.util.DriverFactory;
 
-
 public class HomePage {
 
-	private WebDriverWait wait = new WebDriverWait(DriverFactory.getdriver(), 10);
-	private JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getdriver();
+	private WebDriver driver;
 
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	private WebDriverWait wait = new WebDriverWait(DriverFactory.getdriver(),10);
+	private JavascriptExecutor js = (JavascriptExecutor) driver;
 	@FindBy(how = How.ID, using = "menuUser")
 	private static WebElement btnLogar;
 
@@ -26,7 +33,7 @@ public class HomePage {
 
 	@FindBy(how = How.XPATH, using = "/html/body/login-modal/div/div/div[3]/a[2]")
 	private static WebElement btnCriarConta;
-	
+
 	@FindBy(how = How.XPATH, using = "/html/body/div[3]/footer/div/h3")
 	private WebElement followUS;
 
@@ -41,7 +48,7 @@ public class HomePage {
 	}
 
 	public void clicarComponentSpeakers() {
-		wait.until(ExpectedConditions.visibilityOf(componentSpeakers));	
+		wait.until(ExpectedConditions.visibilityOf(componentSpeakers));
 		js.executeScript("arguments[0].click()", componentSpeakers);
 	}
 
@@ -57,7 +64,6 @@ public class HomePage {
 	public WebElement getBtnLogar() {
 		return btnLogar;
 	}
-
 
 	public WebElement getComponentSpeakers() {
 		return componentSpeakers;

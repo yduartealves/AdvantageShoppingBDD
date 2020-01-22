@@ -6,8 +6,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
+import br.com.rsinet.HUB_BDD.manager.PageObjectManager;
 import br.com.rsinet.HUB_BDD.pageFactory.HomePage;
 import br.com.rsinet.HUB_BDD.pageFactory.SearchPage;
 import br.com.rsinet.HUB_BDD.util.DriverFactory;
@@ -20,12 +20,14 @@ public class PesquisaPelaHome {
 	private WebDriver driver;
 	private HomePage homePage;
 	private SearchPage searchPage;
+	private PageObjectManager pageObjectManager;
 
 	@Dado("^que eu esteja na tela principal$")
 	public void queEuEstejaNaTelaPrincipal() throws Throwable {
 		driver = DriverFactory.initDriver();
-		homePage = PageFactory.initElements(driver, HomePage.class);
-		searchPage = PageFactory.initElements(driver, SearchPage.class);
+		pageObjectManager = new PageObjectManager(driver);
+		searchPage = pageObjectManager.getSearchPage();
+		homePage = pageObjectManager.getHomePage();
 	}
 
 	@Quando("^clico em speakers$")
