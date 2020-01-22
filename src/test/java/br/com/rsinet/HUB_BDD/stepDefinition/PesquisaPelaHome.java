@@ -39,7 +39,7 @@ public class PesquisaPelaHome {
 	public void clicoNoProdutoIndicado(DataTable dados) throws Throwable {
 		for (Map<String, String> dado : dados.asMaps(String.class, String.class)) {
 			try {
-				searchPage.clicarMassaDados(driver, dado.get("produto"));
+				searchPage.clicarMassaDados(dado.get("produto"));
 			}catch(Exception e) {
 				break;
 			}

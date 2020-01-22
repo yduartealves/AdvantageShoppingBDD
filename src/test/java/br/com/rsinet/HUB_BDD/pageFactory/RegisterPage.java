@@ -16,9 +16,10 @@ public class RegisterPage {
 	public RegisterPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(this.driver, 10);
 	}
 
-	private WebDriverWait wait = new WebDriverWait(driver, 10);
+	private WebDriverWait wait;
 	private Select select;
 	
 	@FindBy(how = How.NAME, using = "usernameRegisterPage")

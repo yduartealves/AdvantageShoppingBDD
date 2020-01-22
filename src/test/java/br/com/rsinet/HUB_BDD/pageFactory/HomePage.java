@@ -9,19 +9,19 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.com.rsinet.HUB_BDD.util.DriverFactory;
-
 public class HomePage {
 
 	private WebDriver driver;
+	private WebDriverWait wait;
+	private JavascriptExecutor js;
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(this.driver,10);		
+		js = (JavascriptExecutor) this.driver;
 	}
-
-	private WebDriverWait wait = new WebDriverWait(DriverFactory.getdriver(),10);
-	private JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 	@FindBy(how = How.ID, using = "menuUser")
 	private static WebElement btnLogar;
 

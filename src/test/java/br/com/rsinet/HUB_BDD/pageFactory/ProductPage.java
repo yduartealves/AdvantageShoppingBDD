@@ -14,9 +14,10 @@ public class ProductPage {
 	public ProductPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(this.driver, 10);
 	}
 
-	private WebDriverWait wait = new WebDriverWait(driver, 10);
+	private WebDriverWait wait;
 
 	@FindBy(how = How.NAME, using = "save_to_cart")
 	private WebElement btnAddCart;
