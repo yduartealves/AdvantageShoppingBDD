@@ -39,6 +39,7 @@ public class SearchPage {
 		executor.executeScript("arguments[0].click();", linkText(driver, linkText));
 		wait.until(ExpectedConditions.urlContains("/product/"));
 		wait.until(ExpectedConditions.visibilityOf(followUS));
+		executor.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1000);");	
 	}
 	public String getComponentText() {
 		return componentText.getText();

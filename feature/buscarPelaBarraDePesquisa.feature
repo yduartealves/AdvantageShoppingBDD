@@ -9,19 +9,19 @@ Funcionalidade: Pesquisa pela barra
   @PesquisaBarraSucesso
   Cenario: Pesquisa com Sucesso
     E escrevo o produto no qual quero pesquisar
-      | Produto                       |
+      | produto                       |
       | HP USB 3 Button Optical Mouse |
     E clico no produto
-      | Produto                       |
+      | produto                       |
       | HP USB 3 Button Optical Mouse |
 		Entao estarei na tela do produto "HP USB 3 BUTTON OPTICAL MOUSE"
 		
 	@PesquisaBarraFalha
 	Cenario:
 		E escrevo o produto no qual quero pesquisar
-      | Produto                       |
+      | produto                       |
       | DELL Supra Master demais			|
     E clico no produto
-      | Produto                       |
+      | produto                       |
       | DELL Supra Master demais			|
     Entao o produto nao sera encontrado "DELL Supra Master demais"

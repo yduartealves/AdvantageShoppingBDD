@@ -26,6 +26,9 @@ public class HomePage {
 
 	@FindBy(how = How.XPATH, using = "/html/body/login-modal/div/div/div[3]/a[2]")
 	private static WebElement btnCriarConta;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/footer/div/h3")
+	private WebElement followUS;
 
 	public void clickBtnLogar() {
 		wait.until(ExpectedConditions.visibilityOf(btnLogar));
@@ -38,8 +41,8 @@ public class HomePage {
 	}
 
 	public void clicarComponentSpeakers() {
-		wait.until(ExpectedConditions.visibilityOf(componentSpeakers));
-		componentSpeakers.click();
+		wait.until(ExpectedConditions.visibilityOf(componentSpeakers));	
+		js.executeScript("arguments[0].click()", componentSpeakers);
 	}
 
 	public String getUserLog() {

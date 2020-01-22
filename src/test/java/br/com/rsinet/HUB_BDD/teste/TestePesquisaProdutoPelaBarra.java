@@ -3,6 +3,7 @@ package br.com.rsinet.HUB_BDD.teste;
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
+import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
@@ -10,7 +11,8 @@ import cucumber.api.junit.Cucumber;
 		features = "feature",
 		glue = {"br.com.rsinet.HUB_BDD.stepDefinition"},
 		tags = {"@PesquisaBarraSucesso, @PesquisaBarraFalha"},
-		monochrome = true, plugin = {"pretty", "html:relatorios"}
+		monochrome = true, plugin = {"pretty", "html:relatorios"},
+		snippets = SnippetType.CAMELCASE
 )
 public class TestePesquisaProdutoPelaBarra {
 

@@ -34,7 +34,7 @@ public class PesquisaPelaBarra {
 	@Quando("^escrevo o produto no qual quero pesquisar$")
 	public void escrevo_o_produto_no_qual_quero_pesquisar(DataTable dados) throws Throwable {
 		for (Map<String, String> dado : dados.asMaps(String.class, String.class)) {
-			searchPage.barraPesquisa(dado.get("Produto"));
+			searchPage.barraPesquisa(dado.get("produto"));
 			searchPage.barraPesquisa(Keys.ENTER);
 		}
 	}
@@ -43,7 +43,7 @@ public class PesquisaPelaBarra {
 	public void clico_no_produto(DataTable dados) throws Throwable {
 		for (Map<String, String> dado : dados.asMaps(String.class, String.class)) {
 			try {
-				searchPage.clicarMassaDados(driver, dado.get("Produto"));
+				searchPage.clicarMassaDados(driver, dado.get("produto"));
 			}catch(Exception e) {
 				break;
 			}
