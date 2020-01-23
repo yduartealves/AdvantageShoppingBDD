@@ -11,8 +11,8 @@ Funcionalidade: Cadastro de usuario
   Cenario: Cadastro com sucesso
     E informo os dados para cadastro
       | Username | email                       | senha   | senhaConfirm | primeiroNome | ultimoNome | telefone     | Pais   | Cidade          | Endereco       | Estado    | CEP       |
-      | BRUN329  | felipe.almeidaa14@gmail.com | Felipe2 | Felipe2      | Felipe       | Silva      | (11)94444223 | Brazil | Taboão da Serra | Rua Bueno, 188 | São Paulo | 06784-200 |
-    Entao o meu usuario aparece conectado como "BRUN329"
+      | BRUN330  | felipe.almeidaa14@gmail.com | Felipe2 | Felipe2      | Felipe       | Silva      | (11)94444223 | Brazil | Taboão da Serra | Rua Bueno, 188 | São Paulo | 06784-200 |
+    Entao o meu usuario aparece conectado como "BRUN330"
 
   @cadastroComFalha
   Cenario: Cadastro com falha

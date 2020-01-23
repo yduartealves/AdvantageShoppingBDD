@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("buscarPelaHome.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("buscarPelaBarraDePesquisa.feature");
 formatter.feature({
   "comments": [
     {
@@ -7,13 +7,13 @@ formatter.feature({
     },
     {
       "line": 2,
-      "value": "#encoding: utf-8"
+      "value": "#enconding: utf-8"
     }
   ],
   "line": 3,
-  "name": "Busca pela home",
+  "name": "Pesquisa pela barra",
   "description": "",
-  "id": "busca-pela-home",
+  "id": "pesquisa-pela-barra",
   "keyword": "Funcionalidade"
 });
 formatter.background({
@@ -25,46 +25,45 @@ formatter.background({
 });
 formatter.step({
   "line": 6,
-  "name": "que eu esteja na tela principal",
+  "name": "em que estou na tela inicial",
   "keyword": "Dado "
 });
 formatter.step({
   "line": 7,
-  "name": "clico em speakers",
+  "name": "clico na lupa de pesquisa",
   "keyword": "Quando "
 });
 formatter.match({
-  "location": "PesquisaPelaHome.queEuEstejaNaTelaPrincipal()"
+  "location": "PesquisaPelaBarra.emQueEstouNaTelaInicial()"
 });
 formatter.result({
-  "duration": 19747174600,
+  "duration": 13597401300,
   "status": "passed"
 });
 formatter.match({
-  "location": "PesquisaPelaHome.clicoEmSpeakers()"
+  "location": "PesquisaPelaBarra.clicoNaLupaDePesquisa()"
 });
 formatter.result({
-  "duration": 17155565201,
-  "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (0a31f9698665c716c16e1730c0fcdfe9)] -\u003e id: speakersImg] (tried for 10 second(s) with 500 milliseconds interval)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)\r\n\tat br.com.rsinet.HUB_BDD.pageFactory.HomePage.clicarComponentSpeakers(HomePage.java:51)\r\n\tat br.com.rsinet.HUB_BDD.stepDefinition.PesquisaPelaHome.clicoEmSpeakers(PesquisaPelaHome.java:35)\r\n\tat ✽.Quando clico em speakers(buscarPelaHome.feature:7)\r\nCaused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"speakersImg\"}\n  (Session info: chrome\u003d79.0.3945.117)\n  (Driver info: chromedriver\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform\u003dWindows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027RSI1515\u0027, ip: \u0027192.168.43.226\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_171\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\\Users\\FELIPE~1.ALM\\AppDa...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61071}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.117, webStorageEnabled: true}\nSession ID: 0a31f9698665c716c16e1730c0fcdfe9\n*** Element info: {Using\u003did, value\u003dspeakersImg}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy16.isDisplayed(Unknown Source)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)\r\n\tat br.com.rsinet.HUB_BDD.pageFactory.HomePage.clicarComponentSpeakers(HomePage.java:51)\r\n\tat br.com.rsinet.HUB_BDD.stepDefinition.PesquisaPelaHome.clicoEmSpeakers(PesquisaPelaHome.java:35)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n\tat java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:40)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:34)\r\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:300)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.runBackground(CucumberScenario.java:59)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:42)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:100)\r\n\tat org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)\r\n\tat org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)\r\n",
-  "status": "failed"
+  "duration": 1509620000,
+  "status": "passed"
 });
 formatter.scenario({
   "line": 10,
-  "name": "Busca com sucesso pela home",
+  "name": "Pesquisa com Sucesso",
   "description": "",
-  "id": "busca-pela-home;busca-com-sucesso-pela-home",
+  "id": "pesquisa-pela-barra;pesquisa-com-sucesso",
   "type": "scenario",
   "keyword": "Cenario",
   "tags": [
     {
       "line": 9,
-      "name": "@BuscaHomeSucesso"
+      "name": "@PesquisaBarraSucesso"
     }
   ]
 });
 formatter.step({
   "line": 11,
-  "name": "clico no produto indicado",
+  "name": "escrevo o produto no qual quero pesquisar",
   "rows": [
     {
       "cells": [
@@ -74,7 +73,7 @@ formatter.step({
     },
     {
       "cells": [
-        "Bose Soundlink Bluetooth Speaker III"
+        "HP USB 3 Button Optical Mouse"
       ],
       "line": 13
     }
@@ -83,29 +82,53 @@ formatter.step({
 });
 formatter.step({
   "line": 14,
-  "name": "estou na tela do produto \"BOSE SOUNDLINK BLUETOOTH SPEAKER III\"",
+  "name": "clico no produto",
+  "rows": [
+    {
+      "cells": [
+        "produto"
+      ],
+      "line": 15
+    },
+    {
+      "cells": [
+        "HP USB 3 Button Optical Mouse"
+      ],
+      "line": 16
+    }
+  ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 17,
+  "name": "estarei na tela do produto \"HP USB 3 BUTTON OPTICAL MOUSE\"",
   "keyword": "Entao "
 });
 formatter.match({
-  "location": "PesquisaPelaHome.clicoNoProdutoIndicado(DataTable)"
+  "location": "PesquisaPelaBarra.escrevoOProdutoNoQualQueroPesquisar(DataTable)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 724581800,
+  "status": "passed"
+});
+formatter.match({
+  "location": "PesquisaPelaBarra.clicoNoProduto(DataTable)"
+});
+formatter.result({
+  "duration": 3389741200,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "BOSE SOUNDLINK BLUETOOTH SPEAKER III",
-      "offset": 26
+      "val": "HP USB 3 BUTTON OPTICAL MOUSE",
+      "offset": 28
     }
   ],
-  "location": "PesquisaPelaHome.estouNaTelaDoProduto(String)"
+  "location": "PesquisaPelaBarra.estareiNaTelaDoProduto(String)"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 712705399,
+  "duration": 66644300,
   "status": "passed"
 });
 formatter.background({
@@ -117,81 +140,110 @@ formatter.background({
 });
 formatter.step({
   "line": 6,
-  "name": "que eu esteja na tela principal",
+  "name": "em que estou na tela inicial",
   "keyword": "Dado "
 });
 formatter.step({
   "line": 7,
-  "name": "clico em speakers",
+  "name": "clico na lupa de pesquisa",
   "keyword": "Quando "
 });
 formatter.match({
-  "location": "PesquisaPelaHome.queEuEstejaNaTelaPrincipal()"
+  "location": "PesquisaPelaBarra.emQueEstouNaTelaInicial()"
 });
 formatter.result({
-  "duration": 15148606200,
+  "duration": 10735763700,
   "status": "passed"
 });
 formatter.match({
-  "location": "PesquisaPelaHome.clicoEmSpeakers()"
+  "location": "PesquisaPelaBarra.clicoNaLupaDePesquisa()"
 });
 formatter.result({
-  "duration": 11281278100,
-  "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (cb4c9e8182c00df06253595c2c737ea3)] -\u003e id: speakersImg] (tried for 10 second(s) with 500 milliseconds interval)\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)\r\n\tat br.com.rsinet.HUB_BDD.pageFactory.HomePage.clicarComponentSpeakers(HomePage.java:51)\r\n\tat br.com.rsinet.HUB_BDD.stepDefinition.PesquisaPelaHome.clicoEmSpeakers(PesquisaPelaHome.java:35)\r\n\tat ✽.Quando clico em speakers(buscarPelaHome.feature:7)\r\nCaused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"speakersImg\"}\n  (Session info: chrome\u003d79.0.3945.117)\n  (Driver info: chromedriver\u003d2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform\u003dWindows NT 10.0.18362 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027RSI1515\u0027, ip: \u0027192.168.43.226\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_171\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.42.591088 (7b2b2dca23cca0..., userDataDir: C:\\Users\\FELIPE~1.ALM\\AppDa...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61113}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 79.0.3945.117, webStorageEnabled: true}\nSession ID: cb4c9e8182c00df06253595c2c737ea3\n*** Element info: {Using\u003did, value\u003dspeakersImg}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\r\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy16.isDisplayed(Unknown Source)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)\r\n\tat br.com.rsinet.HUB_BDD.pageFactory.HomePage.clicarComponentSpeakers(HomePage.java:51)\r\n\tat br.com.rsinet.HUB_BDD.stepDefinition.PesquisaPelaHome.clicoEmSpeakers(PesquisaPelaHome.java:35)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)\r\n\tat java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:40)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:34)\r\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)\r\n\tat cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)\r\n\tat cucumber.runtime.Runtime.runStep(Runtime.java:300)\r\n\tat cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)\r\n\tat cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)\r\n\tat cucumber.runtime.model.CucumberScenario.runBackground(CucumberScenario.java:59)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:42)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:100)\r\n\tat org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)\r\n\tat org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)\r\n",
-  "status": "failed"
+  "duration": 1361786100,
+  "status": "passed"
 });
 formatter.scenario({
-  "line": 17,
-  "name": "Busca com falha pela home",
+  "line": 20,
+  "name": "",
   "description": "",
-  "id": "busca-pela-home;busca-com-falha-pela-home",
+  "id": "pesquisa-pela-barra;",
   "type": "scenario",
   "keyword": "Cenario",
   "tags": [
     {
-      "line": 16,
-      "name": "@BuscaHomeFalha"
+      "line": 19,
+      "name": "@PesquisaBarraFalha"
     }
   ]
 });
 formatter.step({
-  "line": 18,
-  "name": "clico no produto indicado",
+  "line": 21,
+  "name": "escrevo o produto no qual quero pesquisar",
   "rows": [
     {
       "cells": [
         "produto"
       ],
-      "line": 19
+      "line": 22
     },
     {
       "cells": [
-        "Bose Soundlink Bluetooth Speaker VI"
+        "DELL Supra Master demais"
       ],
-      "line": 20
+      "line": 23
     }
   ],
   "keyword": "E "
 });
 formatter.step({
-  "line": 21,
-  "name": "nao encontrarei produto",
+  "line": 24,
+  "name": "clico no produto",
+  "rows": [
+    {
+      "cells": [
+        "produto"
+      ],
+      "line": 25
+    },
+    {
+      "cells": [
+        "DELL Supra Master demais"
+      ],
+      "line": 26
+    }
+  ],
+  "keyword": "E "
+});
+formatter.step({
+  "line": 27,
+  "name": "o produto nao sera encontrado \"DELL Supra Master demais\"",
   "keyword": "Entao "
 });
 formatter.match({
-  "location": "PesquisaPelaHome.clicoNoProdutoIndicado(DataTable)"
+  "location": "PesquisaPelaBarra.escrevoOProdutoNoQualQueroPesquisar(DataTable)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 573051800,
+  "status": "passed"
 });
 formatter.match({
-  "location": "PesquisaPelaHome.naoEncontrareiProduto()"
+  "location": "PesquisaPelaBarra.clicoNoProduto(DataTable)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 10122405100,
+  "status": "passed"
 });
-formatter.after({
-  "duration": 668573301,
+formatter.match({
+  "arguments": [
+    {
+      "val": "DELL Supra Master demais",
+      "offset": 31
+    }
+  ],
+  "location": "PesquisaPelaBarra.oProdutoNaoSeraEncontrado(String)"
+});
+formatter.result({
+  "duration": 27118300,
   "status": "passed"
 });
 });

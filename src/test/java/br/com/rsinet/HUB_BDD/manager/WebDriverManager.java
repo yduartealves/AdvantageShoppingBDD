@@ -60,13 +60,19 @@ public class WebDriverManager {
 
 		if (FileReaderManager.getInstance().getConfigReader().getBrowserWindowSize())
 			driver.manage().window().maximize();
+		
 		driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(),
 				TimeUnit.SECONDS);
+
 		return driver;
 	}
 
 	public void closeDriver() {
-		if (driver != null)
+		if (driver == null) {
+			driver = getDriver();
 			driver.quit();
+		}
+		
+		driver.quit();
 	}
 }
