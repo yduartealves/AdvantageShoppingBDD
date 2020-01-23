@@ -8,9 +8,9 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.HUB_BDD.manager.PageObjectManager;
+import br.com.rsinet.HUB_BDD.manager.WebDriverManager;
 import br.com.rsinet.HUB_BDD.pageFactory.HomePage;
 import br.com.rsinet.HUB_BDD.pageFactory.SearchPage;
-import br.com.rsinet.HUB_BDD.util.DriverFactory;
 import cucumber.api.DataTable;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
@@ -21,10 +21,12 @@ public class PesquisaPelaHome {
 	private HomePage homePage;
 	private SearchPage searchPage;
 	private PageObjectManager pageObjectManager;
-
+	private WebDriverManager webDriver;
+	
 	@Dado("^que eu esteja na tela principal$")
 	public void queEuEstejaNaTelaPrincipal() throws Throwable {
-		driver = DriverFactory.initDriver();
+		webDriver = new WebDriverManager();
+		driver = webDriver.getDriver();
 		pageObjectManager = new PageObjectManager(driver);
 		searchPage = pageObjectManager.getSearchPage();
 		homePage = pageObjectManager.getHomePage();

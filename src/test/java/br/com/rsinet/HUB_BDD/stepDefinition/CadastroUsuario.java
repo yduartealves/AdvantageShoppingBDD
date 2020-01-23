@@ -7,9 +7,9 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.HUB_BDD.manager.PageObjectManager;
+import br.com.rsinet.HUB_BDD.manager.WebDriverManager;
 import br.com.rsinet.HUB_BDD.pageFactory.HomePage;
 import br.com.rsinet.HUB_BDD.pageFactory.RegisterPage;
-import br.com.rsinet.HUB_BDD.util.DriverFactory;
 import cucumber.api.DataTable;
 import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
@@ -21,10 +21,11 @@ public class CadastroUsuario {
 	private HomePage homePage;
 	private RegisterPage registerPage;
 	private PageObjectManager pageObjectManager;
-
+	private WebDriverManager webDriver;
 	@Dado("^que estou na tela home$")
 	public void que_estou_na_tela_home() throws Throwable {
-		driver = DriverFactory.initDriver();
+		webDriver = new WebDriverManager();
+		driver = webDriver.getDriver();
 		pageObjectManager = new PageObjectManager(driver);
 		homePage = pageObjectManager.getHomePage();
 		registerPage = pageObjectManager.getRegisterPage();
@@ -80,7 +81,7 @@ public class CadastroUsuario {
 
 	@After
 	public void finalizaDriverACadaCenario() {
-		DriverFactory.closeDriver();
+		webDriver.closeDriver();
 	}
 
 }

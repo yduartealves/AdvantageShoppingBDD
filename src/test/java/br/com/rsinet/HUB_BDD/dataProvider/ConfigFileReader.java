@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Properties;
 
+import br.com.rsinet.HUB_BDD.enums.DriverType;
+import br.com.rsinet.HUB_BDD.enums.EnvironmentType;
+
 public class ConfigFileReader {
 	private Properties properties;
 	private final String CAMINHOCONFIG = "config//configuration.properties";
@@ -50,6 +53,35 @@ public class ConfigFileReader {
 			return url;
 		else
 			throw new RuntimeException("url não está especificado em Configuration.properties");
+	}
+
+	public DriverType getBrowser() {
+		String browserName = properties.getProperty("browser");
+		if (browserName == null || browserName.equals("chrome"))
+			return DriverType.CHROME;
+		else if (browserName.equalsIgnoreCase("firefox"))
+			return DriverType.FIREFOX;
+		else if (browserName.equals("iexplorer"))
+			return DriverType.INTERNETEXPLORER;
+		else
+			throw new RuntimeException("o nome do browser não está especificado em Configuration.properties");
+	}
+
+	public EnvironmentType getEnvironment() {
+		String environmentName = properties.getProperty("environment");
+		if (environmentName == null || environmentName.equalsIgnoreCase("local"))
+			return EnvironmentType.LOCAL;
+		else if (environmentName.equals("remote"))
+			return EnvironmentType.REMOTE;
+		else
+			throw new RuntimeException("Environment não está especificado em Configuration.properties");
+	}
+
+	public Boolean getBrowserWindowSize() {
+		String windowSize = properties.getProperty("windowMaximize");
+		if (windowSize != null)
+			return Boolean.valueOf(windowSize);
+		return true;
 	}
 
 }
