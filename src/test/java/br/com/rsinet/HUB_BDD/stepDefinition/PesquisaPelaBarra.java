@@ -8,11 +8,9 @@ import java.util.Map;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import br.com.rsinet.HUB_BDD.manager.FileReaderManager;
 import br.com.rsinet.HUB_BDD.pageFactory.SearchPage;
 import br.com.rsinet.HUB_BDD.picoContainer.ContextoTeste;
 import cucumber.api.DataTable;
-import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
@@ -27,11 +25,6 @@ public class PesquisaPelaBarra {
 		driver = testeContexto.getWebDriverManager().getDriver();
 	}
 	
-	@Dado("^em que estou na tela inicial$")
-	public void emQueEstouNaTelaInicial() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getConfigReader().getUrl());
-	}
-
 	@Quando("^clico na lupa de pesquisa$")
 	public void clicoNaLupaDePesquisa() throws Throwable {
 	    searchPage.lupaPesquisa();
@@ -42,17 +35,6 @@ public class PesquisaPelaBarra {
 		for (Map<String, String> dado : dados.asMaps(String.class, String.class)) {
 			searchPage.barraPesquisa(dado.get("produto"));
 			searchPage.barraPesquisa(Keys.ENTER);
-		}
-	}
-
-	@Quando("^clico no produto$")
-	public void clicoNoProduto(DataTable dados) throws Throwable {
-		for (Map<String, String> dado : dados.asMaps(String.class, String.class)) {
-			try {
-				searchPage.clicarMassaDados(dado.get("produto"));
-			}catch(Exception e) {
-				break;
-			}
 		}
 	}
 

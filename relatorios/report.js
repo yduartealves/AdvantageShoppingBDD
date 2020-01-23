@@ -25,7 +25,7 @@ formatter.background({
 });
 formatter.step({
   "line": 6,
-  "name": "em que estou na tela inicial",
+  "name": "que estou na tela home",
   "keyword": "Dado "
 });
 formatter.step({
@@ -34,17 +34,17 @@ formatter.step({
   "keyword": "Quando "
 });
 formatter.match({
-  "location": "PesquisaPelaBarra.emQueEstouNaTelaInicial()"
+  "location": "StepRepetidas.queEstouNaTelaHome()"
 });
 formatter.result({
-  "duration": 13597401300,
+  "duration": 13584161600,
   "status": "passed"
 });
 formatter.match({
   "location": "PesquisaPelaBarra.clicoNaLupaDePesquisa()"
 });
 formatter.result({
-  "duration": 1509620000,
+  "duration": 1269346900,
   "status": "passed"
 });
 formatter.scenario({
@@ -108,14 +108,14 @@ formatter.match({
   "location": "PesquisaPelaBarra.escrevoOProdutoNoQualQueroPesquisar(DataTable)"
 });
 formatter.result({
-  "duration": 724581800,
+  "duration": 999389700,
   "status": "passed"
 });
 formatter.match({
-  "location": "PesquisaPelaBarra.clicoNoProduto(DataTable)"
+  "location": "StepRepetidas.clicoNoProduto(DataTable)"
 });
 formatter.result({
-  "duration": 3389741200,
+  "duration": 3107639500,
   "status": "passed"
 });
 formatter.match({
@@ -128,7 +128,11 @@ formatter.match({
   "location": "PesquisaPelaBarra.estareiNaTelaDoProduto(String)"
 });
 formatter.result({
-  "duration": 66644300,
+  "duration": 31299200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 654036400,
   "status": "passed"
 });
 formatter.background({
@@ -140,7 +144,7 @@ formatter.background({
 });
 formatter.step({
   "line": 6,
-  "name": "em que estou na tela inicial",
+  "name": "que estou na tela home",
   "keyword": "Dado "
 });
 formatter.step({
@@ -149,17 +153,17 @@ formatter.step({
   "keyword": "Quando "
 });
 formatter.match({
-  "location": "PesquisaPelaBarra.emQueEstouNaTelaInicial()"
+  "location": "StepRepetidas.queEstouNaTelaHome()"
 });
 formatter.result({
-  "duration": 10735763700,
+  "duration": 10548901100,
   "status": "passed"
 });
 formatter.match({
   "location": "PesquisaPelaBarra.clicoNaLupaDePesquisa()"
 });
 formatter.result({
-  "duration": 1361786100,
+  "duration": 1746377800,
   "status": "passed"
 });
 formatter.scenario({
@@ -223,14 +227,14 @@ formatter.match({
   "location": "PesquisaPelaBarra.escrevoOProdutoNoQualQueroPesquisar(DataTable)"
 });
 formatter.result({
-  "duration": 573051800,
+  "duration": 758266500,
   "status": "passed"
 });
 formatter.match({
-  "location": "PesquisaPelaBarra.clicoNoProduto(DataTable)"
+  "location": "StepRepetidas.clicoNoProduto(DataTable)"
 });
 formatter.result({
-  "duration": 10122405100,
+  "duration": 10096677700,
   "status": "passed"
 });
 formatter.match({
@@ -243,7 +247,11 @@ formatter.match({
   "location": "PesquisaPelaBarra.oProdutoNaoSeraEncontrado(String)"
 });
 formatter.result({
-  "duration": 27118300,
+  "duration": 27152600,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 732279700,
   "status": "passed"
 });
 });

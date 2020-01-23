@@ -3,7 +3,7 @@
 Funcionalidade: Pesquisa pela barra
 
   Contexto: 
-    Dado em que estou na tela inicial
+    Dado que estou na tela home
     Quando clico na lupa de pesquisa
 
   @PesquisaBarraSucesso

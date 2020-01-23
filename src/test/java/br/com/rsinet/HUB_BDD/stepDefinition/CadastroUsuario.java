@@ -6,12 +6,10 @@ import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 
-import br.com.rsinet.HUB_BDD.manager.FileReaderManager;
 import br.com.rsinet.HUB_BDD.pageFactory.HomePage;
 import br.com.rsinet.HUB_BDD.pageFactory.RegisterPage;
 import br.com.rsinet.HUB_BDD.picoContainer.ContextoTeste;
 import cucumber.api.DataTable;
-import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
@@ -26,11 +24,6 @@ public class CadastroUsuario {
 		homePage = testeContexto.getPageObjectManager().getHomePage();
 		registerPage = testeContexto.getPageObjectManager().getRegisterPage();
 		driver = testeContexto.getWebDriverManager().getDriver();
-	}
-
-	@Dado("^que estou na tela home$")
-	public void queEstouNaTelaHome() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getConfigReader().getUrl());
 	}
 
 	@Quando("^clico no botao logar$")
