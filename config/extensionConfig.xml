@@ -1,7 +1,7 @@
 <?xml version="1.0" enconding="UTF-8"?>
 <extentreports>
 	<configuration>
-		<theme>dark</theme>
+		<theme>standard</theme>
 		<enconding>UTF-8</enconding>
 		<protocol>https</protocol>
 		<documentTitle>Teste Advantage Shopping - BDD</documentTitle>

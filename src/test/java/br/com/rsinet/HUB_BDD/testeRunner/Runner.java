@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 		glue = {"br.com.rsinet.HUB_BDD.stepDefinition"},
 		monochrome = true,
 		snippets = SnippetType.CAMELCASE,
-		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:relatorios"}
+		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:relatorios/report.html"}
 )
 public class Runner {
 	@AfterClass
