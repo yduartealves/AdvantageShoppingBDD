@@ -1,7 +1,6 @@
 package br.com.rsinet.HUB_BDD.stepDefinition;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.WebDriver;
 
@@ -24,13 +23,6 @@ public class PesquisaPelaHome {
 	@Quando("^clico em speakers$")
 	public void clicoEmSpeakers() throws Throwable {
 		homePage.clicarComponentSpeakers();
-	}
-
-
-	@Entao("^estou na tela do produto \"([^\"]*)\"$")
-	public void estouNaTelaDoProduto(String produto) throws Throwable {
-		assertEquals("https://www.advantageonlineshopping.com/#/product/20", driver.getCurrentUrl());
-		assertTrue(driver.getPageSource().contains(produto));
 	}
 
 	@Entao("^nao encontrarei produto$")

@@ -13,9 +13,13 @@ import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "feature", glue = {
-		"br.com.rsinet.HUB_BDD.stepDefinition" }, monochrome = true, snippets = SnippetType.CAMELCASE, plugin = {
-				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" })
+@CucumberOptions(
+		features = "feature", 
+		glue = {"br.com.rsinet.HUB_BDD.stepDefinition" }, 
+		monochrome = true, 
+		snippets = SnippetType.CAMELCASE, 
+		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}
+)
 public class Runner {
 	@AfterClass
 	public static void writeExtentReport() {

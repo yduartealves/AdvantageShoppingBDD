@@ -14,14 +14,22 @@ Funcionalidade: Pesquisa pela barra
     E clico no produto
       | produto                       |
       | HP USB 3 Button Optical Mouse |
-		Entao estarei na tela do produto "HP USB 3 BUTTON OPTICAL MOUSE"
-		
-	@PesquisaBarraFalha
-	Cenario: Pesquisa com falha
-		E escrevo o produto no qual quero pesquisar
-      | produto                       |
-      | DELL Supra Master demais			|
+    E clico em adicionar ao carrinho
+    E clico no botão checkout
+    E passo o usuario, senha
+      | username | senha   |
+      | BRUN255  | Felipe2 |
+     E clico em conectar-se
+     E clico em próximo
+     E clico em Pague agora
+    Entao estarei na tela de produto comprado "Thank you for buying with Advantage"
+
+  @PesquisaBarraFalha
+  Cenario: Pesquisa com falha
+    E escrevo o produto no qual quero pesquisar
+      | produto                  |
+      | DELL Supra Master demais |
     E clico no produto
-      | produto                       |
-      | DELL Supra Master demais			|
+      | produto                  |
+      | DELL Supra Master demais |
     Entao o produto nao sera encontrado "DELL Supra Master demais"

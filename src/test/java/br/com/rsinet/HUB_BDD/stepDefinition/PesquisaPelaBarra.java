@@ -1,6 +1,5 @@
 package br.com.rsinet.HUB_BDD.stepDefinition;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Map;
@@ -36,12 +35,6 @@ public class PesquisaPelaBarra {
 			searchPage.barraPesquisa(dado.get("produto"));
 			searchPage.barraPesquisa(Keys.ENTER);
 		}
-	}
-
-	@Entao("^estarei na tela do produto \"([^\"]*)\"$")
-	public void estareiNaTelaDoProduto(String produto) throws Throwable {
-	   assertEquals("https://www.advantageonlineshopping.com/#/product/29?viewAll=HP%20USB%203%20Button%20Optical%20Mouse", driver.getCurrentUrl());
-	   assertTrue(driver.getPageSource().contains(produto));
 	}
 
 	@Entao("^o produto nao sera encontrado \"([^\"]*)\"$")
