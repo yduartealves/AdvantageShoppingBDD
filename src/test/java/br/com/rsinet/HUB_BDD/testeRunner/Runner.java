@@ -15,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "feature", glue = {
 		"br.com.rsinet.HUB_BDD.stepDefinition" }, monochrome = true, snippets = SnippetType.CAMELCASE, plugin = {
-				"com.cucumber.listener.ExtentCucumberFormatter:relatorios/report.html" })
+				"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html" })
 public class Runner {
 	@AfterClass
 	public static void writeExtentReport() {
@@ -26,6 +26,7 @@ public class Runner {
 		Reporter.setSystemInfo("Selenium", "3.141.59");
 		Reporter.setSystemInfo("Maven", "3.6.2");
 		Reporter.setSystemInfo("Java Version", "1.8.0_151");
+
 	}
 
 }

@@ -24,22 +24,20 @@ public class Hooks {
 
 	@After(order = 1)
 	public void capturaCenario(Scenario cenario) {
-		if (!cenario.isFailed()) {
 			String screenshotName = cenario.getName().replaceAll(" ", "_");
 			try {
 				File sourcePath = ((TakesScreenshot) testeContexto.getWebDriverManager().getDriver())
 						.getScreenshotAs(OutputType.FILE);
 
-				File caminhoDestino = new File(
-						"screenshots/" + screenshotName + "_" + DataHoraDiaGenerator.dataHoraParaArquivo() + ".png");
+				String caminhoDestino = System.getProperty("user.dir") + "/target/cucumber-reports/screenshots/" + screenshotName + "_"
+						+ DataHoraDiaGenerator.dataHoraParaArquivo() + ".png";
 
-				Files.copy(sourcePath, caminhoDestino);
+				Files.copy(sourcePath, new File(caminhoDestino));
 
-				Reporter.addScreenCaptureFromPath(caminhoDestino.toString());
+				Reporter.addScreenCaptureFromPath(caminhoDestino);
 			} catch (IOException e) {
 				System.out.println("não consegui capturar");
 			}
-		}
 	}
 
 	@After(order = 0)

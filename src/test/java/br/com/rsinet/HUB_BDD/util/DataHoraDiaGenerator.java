@@ -8,8 +8,4 @@ public class DataHoraDiaGenerator {
 	        Timestamp ts = new Timestamp(System.currentTimeMillis());
 	        return new SimpleDateFormat("yyyyMMddhhmmss").format(ts);
 	 }
-	 
-	 public static void felipe() {
-		 
-	 }
 }
