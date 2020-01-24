@@ -22,6 +22,7 @@ public class ConfigFileReader {
 				reader.close();
 			} catch (Exception e) {
 				e.printStackTrace();
+				throw new RuntimeException("felipe");
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

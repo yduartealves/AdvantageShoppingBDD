@@ -17,7 +17,7 @@ Funcionalidade: Pesquisa pela barra
 		Entao estarei na tela do produto "HP USB 3 BUTTON OPTICAL MOUSE"
 		
 	@PesquisaBarraFalha
-	Cenario:
+	Cenario: Pesquisa com falha
 		E escrevo o produto no qual quero pesquisar
       | produto                       |
       | DELL Supra Master demais			|
