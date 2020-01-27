@@ -18,8 +18,7 @@ import cucumber.api.junit.Cucumber;
 		glue = {"br.com.rsinet.HUB_BDD.stepDefinition" }, 
 		monochrome = true, 
 		snippets = SnippetType.CAMELCASE, 
-		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
-		tags = {"@BuscaHomeFalha"}
+		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}
 )
 public class Runner {
 	@AfterClass
