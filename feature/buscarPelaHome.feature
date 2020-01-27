@@ -23,7 +23,5 @@ Funcionalidade: Busca pela home
 
   @BuscaHomeFalha
   Cenario: Busca com falha pela home
-    E clico no produto
-      | produto                             |
-      | Bose Soundlink Bluetooth Speaker VI |
+    E clico nas especificacoes 
     Entao nao encontrarei produto

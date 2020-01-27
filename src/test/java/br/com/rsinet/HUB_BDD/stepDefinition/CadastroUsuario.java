@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import br.com.rsinet.HUB_BDD.pageFactory.HomePage;
 import br.com.rsinet.HUB_BDD.pageFactory.RegisterPage;
 import br.com.rsinet.HUB_BDD.picoContainer.ContextoTeste;
+import br.com.rsinet.HUB_BDD.util.ScrollDownEUp;
 import cucumber.api.DataTable;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
@@ -18,12 +19,14 @@ public class CadastroUsuario {
 	private HomePage homePage;
 	private RegisterPage registerPage;
 	private ContextoTeste testeContexto;
+	private ScrollDownEUp scrollDownEUp;
 
 	public CadastroUsuario(ContextoTeste contexto) {
 		testeContexto = contexto;
 		homePage = testeContexto.getPageObjectManager().getHomePage();
 		registerPage = testeContexto.getPageObjectManager().getRegisterPage();
 		driver = testeContexto.getWebDriverManager().getDriver();
+		scrollDownEUp =  testeContexto.getPageObjectManager().getScroll();
 	}
 
 	@Quando("^clico no botao logar$")
@@ -71,6 +74,7 @@ public class CadastroUsuario {
 
 	@Entao("^devo permanecer na tela de registro$")
 	public void devoPermanecerNaTelaDeRegistro() throws Throwable {
+		scrollDownEUp.scrollUp();
 		assertEquals("https://www.advantageonlineshopping.com/#/register", driver.getCurrentUrl());
 	}
 

@@ -6,6 +6,7 @@ import br.com.rsinet.HUB_BDD.pageFactory.HomePage;
 import br.com.rsinet.HUB_BDD.pageFactory.ProductPage;
 import br.com.rsinet.HUB_BDD.pageFactory.RegisterPage;
 import br.com.rsinet.HUB_BDD.pageFactory.SearchPage;
+import br.com.rsinet.HUB_BDD.util.ScrollDownEUp;
 
 public class PageObjectManager {
 	private WebDriver driver;
@@ -17,6 +18,8 @@ public class PageObjectManager {
 	 private RegisterPage registerPage;
 	 
 	 private SearchPage searchPage;
+
+	private ScrollDownEUp scrollDownEUp;
 	 
 	 
 	 
@@ -56,5 +59,9 @@ public class PageObjectManager {
 	 
 		 return (searchPage == null) ? searchPage = new SearchPage(driver) : searchPage;
 	 
+	 }
+	 
+	 public ScrollDownEUp getScroll() {
+		 return (scrollDownEUp == null) ? scrollDownEUp = new ScrollDownEUp(driver) : scrollDownEUp;
 	 }
 }

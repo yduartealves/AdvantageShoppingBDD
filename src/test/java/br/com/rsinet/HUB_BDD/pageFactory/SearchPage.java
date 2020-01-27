@@ -32,7 +32,19 @@ public class SearchPage {
 
 	@FindBy(how = How.XPATH, using = "/html/body/div[3]/footer/div/h3")
 	private WebElement followUS;
-
+	
+	@FindBy( how = How.ID, using = "accordionAttrib1")
+	private WebElement manufacturer;
+	
+	@FindBy( how = How.ID, using = "manufacturer_1")
+	private WebElement checkManufacturer;
+	
+	@FindBy( how = How.ID, using = "accordionAttrib2")
+	private WebElement weight;
+	
+	@FindBy( how = How.ID, using = "weight_1")
+	private WebElement checkWeight;	
+	
 	public WebElement linkText(WebDriver driver, String linkText) throws Exception {
 		return driver.findElement(By.linkText(linkText));
 	}
@@ -64,5 +76,18 @@ public class SearchPage {
 		wait.until(ExpectedConditions.visibilityOf(barraPesquisa));
 		barraPesquisa.sendKeys(enter);
 	}
-
+	
+	public void escolherMarca() {
+		wait.until(ExpectedConditions.visibilityOf(manufacturer));
+		manufacturer.click();
+		wait.until(ExpectedConditions.visibilityOf(checkManufacturer));
+		checkManufacturer.click();
+	}
+	
+	public void escolherPotencia() {
+		wait.until(ExpectedConditions.visibilityOf(weight));
+		weight.click();
+		wait.until(ExpectedConditions.visibilityOf(checkWeight));
+		checkWeight.click();
+	}
 }
